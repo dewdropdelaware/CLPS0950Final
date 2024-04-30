@@ -55,34 +55,34 @@ database = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffee':
     {"name": "Feed the Cheeks",'Thayer': False, 'latenight': False, 'coffee': True, 'dessert': True, 'new': True, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': False}
     ]
 
-ans = input("Is your restaurant actually on Thayer (y/n): ")
+ans = input("Is your restaurant actually on Thayer (y/n/idk): ")
 database = answer_question(ans, 'Thayer', database)
 
-ans = input("Is your restaurant open past midnight (y/n): ")
+ans = input("Is your restaurant open past midnight (y/n/idk): ")
 database = answer_question(ans, 'latenight', database)
 
-ans = input("Does your restaurant serve coffee (y/n): ")
+ans = input("Does your restaurant serve coffee (y/n/idk): ")
 database = answer_question(ans, 'coffee', database)
 
-ans = input("Is your restaurant a dessert place (y/n): ")
+ans = input("Is your restaurant a dessert place (y/n/idk): ")
 database = answer_question(ans, 'dessert', database)
 
-ans = input("Is your restaurant newer (y/n): ")
+ans = input("Is your restaurant newer (y/n/idk): ")
 database = answer_question(ans, 'new', database)
 
-ans = input("Does your restaurant have servers (y/n): ")
+ans = input("Does your restaurant have servers (y/n/idk): ")
 database = answer_question(ans, 'servers', database)
 
-ans = input("Do you expect to spend over $15 when you come (y/n): ")
+ans = input("Do you expect to spend over $15 when you come (y/n/idk): ")
 database = answer_question(ans, 'price', database)
 
-ans = input("Is your restaurant on snackpass (y/n): ")
+ans = input("Is your restaurant on snackpass (y/n/idk): ")
 database = answer_question(ans, 'snackpass', database)
 
-ans = input("Is your restaurant more than one word (y/n): ")
+ans = input("Is your restaurant more than one word (y/n/idk): ")
 database = answer_question(ans, 'words', database)
 
-ans = input("Can you find this restaurant outside of Providence (y/n): ")
+ans = input("Can you find this restaurant outside of Providence (y/n/idk): ")
 database = answer_question(ans, 'outside', database)
 
 if len(database) == 1:
