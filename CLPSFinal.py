@@ -2,19 +2,20 @@ print('This is CLPS0950 Final Project')
 print('Did this work?')
 print ('yes')
 
-def answer_question(answer, prop, database):
-    if answer == "y":
-        answer = True
-    elif answer == "n":
-        answer = False
+def answer_question(ans, prop, database):
+    if ans == "y":
+        ans = True
+    elif ans == "n":
+        ans = False
+    else:
+        ans = True or False
 
     filtered_database = []
     for d in database:
-      if d[prop] == answer:
+      if d[prop] == ans:
             filtered_database.append(d)
 
     return filtered_database
-
 database = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': True},
     {"name": "In The Pink", 'Thayer': True, 'latenight': False, 'coffee': True, 'dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': False},
     {"name": "Ben and Jerry's", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': True},
