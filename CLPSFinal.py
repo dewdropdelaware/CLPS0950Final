@@ -5,7 +5,7 @@ print ('yes')
 def answer_question(answer, prop, database):
     if answer == "y":
         answer = True
-    else: 
+    elif answer == "n":
         answer = False
 
     filtered_database = []
@@ -88,4 +88,4 @@ database = answer_question(ans, 'outside', database)
 if len(database) == 1:
     print("Your restaurant is " + database[0]["name"])
 else:
-    print("Could not identify a unique restaurant based on the provided criteria.")
+    print("Could not identify a restaurant based on the provided criteria.")
