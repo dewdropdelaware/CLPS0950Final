@@ -11,6 +11,7 @@ def answer_question(ans, prop, database):
         ans = True or False
 
     filtered_database = []
+    #import pdb;pdb.set_trace()
     for d in database:
       if d[prop] == ans:
             filtered_database.append(d)
@@ -59,33 +60,49 @@ database = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffee':
 ans = input("Is your restaurant actually on Thayer (y/n/idk): ")
 database = answer_question(ans, 'Thayer', database)
 
+if len(database) == 1:
+    print("Your restaurant is " + database[0]["name"])
+
 ans = input("Is your restaurant open past midnight (y/n/idk): ")
 database = answer_question(ans, 'latenight', database)
-
+if len(database) == 1:
+    print("Your restaurant is " + database[0]["name"])
 ans = input("Does your restaurant serve coffee (y/n/idk): ")
 database = answer_question(ans, 'coffee', database)
-
+if len(database) == 1:
+ print("Your restaurant is " + database[0]["name"])
 ans = input("Does your restaurant primarily serve dessert (y/n/idk): ")
 database = answer_question(ans, 'dessert', database)
+if len(database) == 1:
+print("Your restaurant is " + database[0]["name"])
+    
+    
+    
 
 ans = input("Is your restaurant newer (y/n/idk): ")
 database = answer_question(ans, 'new', database)
-
+if len(database) == 1:
+    print("Your restaurant is " + database[0]["name"])
 ans = input("Does your restaurant have servers (y/n/idk): ")
 database = answer_question(ans, 'servers', database)
-
+if len(database) == 1:
+    print("Your restaurant is " + database[0]["name"])
 ans = input("Do you expect to spend over $15 when you come (y/n/idk): ")
 database = answer_question(ans, 'price', database)
-
+if len(database) == 1:
+    print("Your restaurant is " + database[0]["name"])
 ans = input("Is your restaurant on snackpass (y/n/idk): ")
 database = answer_question(ans, 'snackpass', database)
-
+if len(database) == 1:
+    print("Your restaurant is " + database[0]["name"])
 ans = input("Is your restaurant more than one word (y/n/idk): ")
 database = answer_question(ans, 'words', database)
-
+if len(database) == 1:
+    print("Your restaurant is " + database[0]["name"])
 ans = input("Can you find this restaurant outside of Providence (y/n/idk): ")
 database = answer_question(ans, 'outside', database)
-
+if len(database) == 1:
+    print("Your restaurant is " + database[0]["name"])
 ans = input("Does your restaurant serve pizza (y/n/idk): ")
 database = answer_question(ans, 'pizza', database)
 
