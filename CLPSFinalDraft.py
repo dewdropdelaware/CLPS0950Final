@@ -50,52 +50,44 @@ def answer_question(qans, prop, database):
 # come back to this because it's not doing what we actually want it to be doing
 
     filtered_database = []
-    print(len(filtered_database))
-    print(len(database))
     for d in database:
         if d[prop] == boolean:
             filtered_database.append(d)
-    
-        database = filtered_database
+    return filtered_database
 
-
-    print(len(filtered_database))
-
-    print(len(restaurants))
-    print(len(database))
 
 ans = input("Is your restaurant actually on Thayer (y/n/idk): ")
-answer_question(ans, 'Thayer', restaurants)
+restaurants1 = answer_question(ans, 'Thayer', restaurants)
 
 ans = input("Is your restaurant open past midnight (y/n/idk): ")
-answer_question(ans, 'latenight', restaurants)
+restaurants2 = answer_question(ans, 'latenight', restaurants1)
 
 ans = input("Does your restaurant serve coffee (y/n/idk): ")
-answer_question(ans, 'coffee', restaurants)
+restaurants3 = answer_question(ans, 'coffee', restaurants2)
 
 ans = input("Does your restaurant primarily serve dessert (y/n/idk): ")
-answer_question(ans, 'dessert', restaurants)
+restaurants4 = answer_question(ans, 'dessert', restaurants3)
 
 ans = input("Is your restaurant newer (y/n/idk): ")
-answer_question(ans, 'new', restaurants)
+restaurants5 = answer_question(ans, 'new', restaurants4)
 
 ans = input("Does your restaurant have servers (y/n/idk): ")
-answer_question(ans, 'servers', restaurants)
+restaurants6 = answer_question(ans, 'servers', restaurants5)
 
 ans = input("Do you expect to spend over $15 when you come (y/n/idk): ")
-answer_question(ans, 'price', restaurants)
+restaurants7 = answer_question(ans, 'price', restaurants6)
 
 ans = input("Is your restaurant on snackpass (y/n/idk): ")
-answer_question(ans, 'snackpass', restaurants)
+restaurants8 = answer_question(ans, 'snackpass', restaurants7)
 
 ans = input("Is your restaurant more than one word (y/n/idk): ")
-answer_question(ans, 'words', restaurants)
+restaurants9 = answer_question(ans, 'words', restaurants8)
 
 ans = input("Can you find this restaurant outside of Providence (y/n/idk): ")
-answer_question(ans, 'outside', restaurants)
+restaurants10 = answer_question(ans, 'outside', restaurants9)
 
 ans = input("Does your restaurant serve pizza (y/n/idk): ")
-answer_question(ans, 'pizza', restaurants)
+restaurants11 = answer_question(ans, 'pizza', restaurants10)
 
 if len(restaurants) == 1:
     print("Your restaurant is " + restaurants[0]["name"])

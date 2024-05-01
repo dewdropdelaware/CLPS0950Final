@@ -16,6 +16,7 @@ def answer_question(ans, prop, database):
       if d[prop] == ans:
             filtered_database.append(d)
 
+    print(len(filtered_database))
     return filtered_database
 database = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},
     {"name": "In The Pink", 'Thayer': True, 'latenight': False, 'coffee': True, 'dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
@@ -59,32 +60,34 @@ database = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffee':
 
 ans = input("Is your restaurant actually on Thayer (y/n/idk): ")
 database = answer_question(ans, 'Thayer', database)
-
+print(len(database))
 if len(database) == 1:
     print("Your restaurant is " + database[0]["name"])
 
 ans = input("Is your restaurant open past midnight (y/n/idk): ")
 database = answer_question(ans, 'latenight', database)
+print(len(database))
 if len(database) == 1:
     print("Your restaurant is " + database[0]["name"])
 ans = input("Does your restaurant serve coffee (y/n/idk): ")
 database = answer_question(ans, 'coffee', database)
+print(len(database))
 if len(database) == 1:
  print("Your restaurant is " + database[0]["name"])
 ans = input("Does your restaurant primarily serve dessert (y/n/idk): ")
 database = answer_question(ans, 'dessert', database)
+print(len(database))
 if len(database) == 1:
-print("Your restaurant is " + database[0]["name"])
-    
-    
-    
+ print("Your restaurant is " + database[0]["name"]) 
 
 ans = input("Is your restaurant newer (y/n/idk): ")
 database = answer_question(ans, 'new', database)
+print(len(database))
 if len(database) == 1:
     print("Your restaurant is " + database[0]["name"])
 ans = input("Does your restaurant have servers (y/n/idk): ")
 database = answer_question(ans, 'servers', database)
+print(len(database))
 if len(database) == 1:
     print("Your restaurant is " + database[0]["name"])
 ans = input("Do you expect to spend over $15 when you come (y/n/idk): ")
