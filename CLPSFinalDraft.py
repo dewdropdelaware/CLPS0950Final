@@ -53,6 +53,14 @@ def answer_question(qans, prop, database):
     for d in database:
         if d[prop] == boolean:
             filtered_database.append(d)
+    print(len(database))
+    print(database)
+
+# I want the length of the newly appended database to be taken, but instead this is taking the length of the database entered
+    if len(database) == 1:
+        print("Your restaurant is " + database[0]["name"])
+        exit()
+
     return filtered_database
 
 
@@ -67,9 +75,11 @@ restaurants3 = answer_question(ans, 'coffee', restaurants2)
 
 ans = input("Does your restaurant primarily serve dessert (y/n/idk): ")
 restaurants4 = answer_question(ans, 'dessert', restaurants3)
+print(restaurants4)
 
 ans = input("Is your restaurant newer (y/n/idk): ")
 restaurants5 = answer_question(ans, 'new', restaurants4)
+print(restaurants5)
 
 ans = input("Does your restaurant have servers (y/n/idk): ")
 restaurants6 = answer_question(ans, 'servers', restaurants5)
@@ -89,9 +99,9 @@ restaurants10 = answer_question(ans, 'outside', restaurants9)
 ans = input("Does your restaurant serve pizza (y/n/idk): ")
 restaurants11 = answer_question(ans, 'pizza', restaurants10)
 
-if len(restaurants) == 1:
-    print("Your restaurant is " + restaurants[0]["name"])
-else:
-    print("Could not identify a restaurant based on the provided criteria.")
+#if len(restaurants) == 1:
+    #print("Your restaurant is " + restaurants[0]["name"])
+#else:
+    #print("Could not identify a restaurant based on the provided criteria.")
 
 
