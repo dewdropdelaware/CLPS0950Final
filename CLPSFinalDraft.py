@@ -1,5 +1,6 @@
 print('This is CLPS0950 Final Project')
 
+
 restaurants = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},
     {"name": "In The Pink", 'Thayer': True, 'latenight': False, 'coffee': True, 'dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
     {"name": "Ben and Jerry's", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': True, 'pizza': False},
@@ -40,25 +41,44 @@ restaurants = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffe
     {"name": "Feed the Cheeks",'Thayer': False, 'latenight': False, 'coffee': True, 'dessert': True, 'new': True, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': False, 'pizza': False}
     ]
 
-def answer_question(qans, prop, database):
+
+### REDEFINING OUR DATABASE AS AN ARRAY OF 1, 0
+import numpy as np
+a = len(restaurants[0])
+LA = np.zeros((len(restaurants), (a-1)))
+
+x = []
+q = []
+
+for i,d in enumerate(restaurants):
+    x.append(restaurants[i]["name"])
+    print(x)
+    for j,k,v in enumerate[restaurants]:
+        if k == "name":
+            continue
+        else:
+            q.append(k)
+            LA[i,j-1] = v
+print(LA)
+
+
+""" def answer_question(qans, prop, database):
     if qans == "y":
         boolean = True
     elif qans == "n":
         boolean = False
     else:
-        boolean = True or False
+        return
 # come back to this because it's not doing what we actually want it to be doing
-
+#
     filtered_database = []
     for d in database:
         if d[prop] == boolean:
             filtered_database.append(d)
-    print(len(database))
-    print(database)
 
-# I want the length of the newly appended database to be taken, but instead this is taking the length of the database entered
-    if len(database) == 1:
-        print("Your restaurant is " + database[0]["name"])
+
+    if len(filtered_database) == 1:
+        print("Your restaurant is " + filtered_database[0]["name"])
         exit()
 
     return filtered_database
@@ -97,11 +117,9 @@ ans = input("Can you find this restaurant outside of Providence (y/n/idk): ")
 restaurants10 = answer_question(ans, 'outside', restaurants9)
 
 ans = input("Does your restaurant serve pizza (y/n/idk): ")
-restaurants11 = answer_question(ans, 'pizza', restaurants10)
+restaurants11 = answer_question(ans, 'pizza', restaurants10) """
 
 #if len(restaurants) == 1:
     #print("Your restaurant is " + restaurants[0]["name"])
 #else:
     #print("Could not identify a restaurant based on the provided criteria.")
-
-

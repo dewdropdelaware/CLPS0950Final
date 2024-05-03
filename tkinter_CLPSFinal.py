@@ -1,7 +1,8 @@
 from tkinter import *
-
+import numpy
 #creating a graphical user interface(GUI) for our game to exist in
 open = Tk()
+open.title("The Restaurantators")
 
 myLabel = Label(open, text = 'This is our CLPS0950 Final Project')
 myLabel1 = Label(open, text = 'Are you ready to get started?')
