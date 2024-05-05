@@ -51,15 +51,15 @@ x = []
 q = []
 
 for i,d in enumerate(restaurants):
-    x.append(restaurants[i]["name"])
+    x.append(d["name"])
     print(x)
-    for j,k,v in enumerate[restaurants]:
+    for j,k in enumerate(d.items()):
         if k == "name":
             continue
         else:
             q.append(k)
-            LA[i,j-1] = v
-print(LA)
+            #LA[i,j-1] = v
+print(q)
 
 
 """ def answer_question(qans, prop, database):
