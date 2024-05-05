@@ -42,7 +42,7 @@ restaurants = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffe
     ]
 
 
-### REDEFINING OUR DATABASE AS AN ARRAY OF 1, 0
+""" ### REDEFINING OUR DATABASE AS AN ARRAY OF 1, 0
 import numpy as np
 a = len(restaurants[0])
 LA = np.zeros((len(restaurants), (a-1)))
@@ -58,17 +58,17 @@ for i,d in enumerate(restaurants):
             continue
         else:
             q.append(k)
-            #LA[i,j-1] = v
-print(q)
+            LA[i,j] = k
+print(q) """
 
 
-""" def answer_question(qans, prop, database):
+def answer_question(qans, prop, database):
     if qans == "y":
         boolean = True
     elif qans == "n":
         boolean = False
     else:
-        return
+        return database
 # come back to this because it's not doing what we actually want it to be doing
 #
     filtered_database = []
@@ -117,7 +117,7 @@ ans = input("Can you find this restaurant outside of Providence (y/n/idk): ")
 restaurants10 = answer_question(ans, 'outside', restaurants9)
 
 ans = input("Does your restaurant serve pizza (y/n/idk): ")
-restaurants11 = answer_question(ans, 'pizza', restaurants10) """
+restaurants11 = answer_question(ans, 'pizza', restaurants10)
 
 #if len(restaurants) == 1:
     #print("Your restaurant is " + restaurants[0]["name"])
