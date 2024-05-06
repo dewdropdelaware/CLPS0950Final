@@ -59,7 +59,8 @@ for i,d in enumerate(restaurants):
             if k[0] not in q:
                 q.append(k[0])
             LA[i,j-1] = k[1]
-print(LA)               
+print(LA)  
+            
                 
 
 """ def answer_question(qans, prop, database):
