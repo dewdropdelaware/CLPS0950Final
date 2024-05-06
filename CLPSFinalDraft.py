@@ -42,7 +42,7 @@ restaurants = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffe
     ]
 
 
-""" ### REDEFINING OUR DATABASE AS AN ARRAY OF 1, 0
+## REDEFINING OUR DATABASE AS AN ARRAY OF 1, 0
 import numpy as np
 a = len(restaurants[0])
 LA = np.zeros((len(restaurants), (a-1)))
@@ -52,25 +52,25 @@ q = []
 
 for i,d in enumerate(restaurants):
     x.append(d["name"])
-    print(x)
     for j,k in enumerate(d.items()):
-        if k == "name":
+        if k[0] == "name":
             continue
         else:
-            q.append(k)
-            LA[i,j] = k
-print(q) """
+            if k[0] not in q:
+                q.append(k[0])
+            LA[i,j-1] = k[1]
+print(LA)               
+                
 
-
-def answer_question(qans, prop, database):
+""" def answer_question(qans, prop, database):
     if qans == "y":
         boolean = True
     elif qans == "n":
         boolean = False
     else:
         return database
-# come back to this because it's not doing what we actually want it to be doing
-#
+
+
     filtered_database = []
     for d in database:
         if d[prop] == boolean:
@@ -95,11 +95,9 @@ restaurants3 = answer_question(ans, 'coffee', restaurants2)
 
 ans = input("Does your restaurant primarily serve dessert (y/n/idk): ")
 restaurants4 = answer_question(ans, 'dessert', restaurants3)
-print(restaurants4)
 
 ans = input("Is your restaurant newer (y/n/idk): ")
 restaurants5 = answer_question(ans, 'new', restaurants4)
-print(restaurants5)
 
 ans = input("Does your restaurant have servers (y/n/idk): ")
 restaurants6 = answer_question(ans, 'servers', restaurants5)
@@ -117,7 +115,7 @@ ans = input("Can you find this restaurant outside of Providence (y/n/idk): ")
 restaurants10 = answer_question(ans, 'outside', restaurants9)
 
 ans = input("Does your restaurant serve pizza (y/n/idk): ")
-restaurants11 = answer_question(ans, 'pizza', restaurants10)
+restaurants11 = answer_question(ans, 'pizza', restaurants10) """
 
 #if len(restaurants) == 1:
     #print("Your restaurant is " + restaurants[0]["name"])
