@@ -1,7 +1,4 @@
-print('This is CLPS0950 Final Project')
-
-
-restaurants = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},
+restaurants = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},           
     {"name": "In The Pink", 'Thayer': True, 'latenight': False, 'coffee': True, 'dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
     {"name": "Ben and Jerry's", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': True, 'pizza': False},
     {"name": "Mala Noodles", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': False, 'new': True, 'servers': True, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
@@ -26,7 +23,7 @@ restaurants = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffe
     {"name": "Andreas", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': False, 'new': False, 'servers': True, 'price': True, 'snackpass': False, 'words': False, 'outside': False, 'pizza': False},
     {"name": "Kung Fu Tea", 'Thayer': False, 'latenight': False, 'coffee': False, 'dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': True, 'pizza': False},
     {"name": "Vivi's", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': False, 'outside': True, 'pizza': False},
-    {"name": "Insomnia", 'Thayer': True, 'latenight': True, 'coffee': False, 'dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': True, 'pizza': False},
+    {"name": "Insomnia Cookies", 'Thayer': True, 'latenight': True, 'coffee': False, 'dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': True, 'pizza': False},
     {"name": "Tiger Sugar", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},
     {"name": "Flatbread", 'Thayer': False, 'latenight': False, 'coffee': False, 'dessert': False, 'new': False, 'servers': True, 'price': True, 'snackpass': False, 'words': False, 'outside': True, 'pizza': True},
     {"name": "Heng Thai", 'Thayer': False, 'latenight': False, 'coffee': False, 'dessert': False, 'new': False, 'servers': True, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
@@ -41,29 +38,7 @@ restaurants = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffe
     {"name": "Feed the Cheeks",'Thayer': False, 'latenight': False, 'coffee': True, 'dessert': True, 'new': True, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': False, 'pizza': False}
     ]
 
-
-## REDEFINING OUR DATABASE AS AN ARRAY OF 1, 0
-import numpy as np
-a = len(restaurants[0])
-LA = np.zeros((len(restaurants), (a-1)))
-
-x = []
-q = []
-
-for i,d in enumerate(restaurants):
-    x.append(d["name"])
-    for j,k in enumerate(d.items()):
-        if k[0] == "name":
-            continue
-        else:
-            if k[0] not in q:
-                q.append(k[0])
-            LA[i,j-1] = k[1]
-print(LA)  
-            
-                
-
-""" def answer_question(qans, prop, database):
+def answer_question(qans, prop, database):
     if qans == "y":
         boolean = True
     elif qans == "n":
@@ -81,6 +56,12 @@ print(LA)
     if len(filtered_database) == 1:
         print("Your restaurant is " + filtered_database[0]["name"])
         exit()
+        
+    # if print("Your restaurant is " + filtered_database[0]["name"]) == True:
+    #     exit()
+    # else:
+    #     print('Could not identify a restaurant based on given criteria') naurrrr
+
 
     return filtered_database
 
@@ -116,9 +97,4 @@ ans = input("Can you find this restaurant outside of Providence (y/n/idk): ")
 restaurants10 = answer_question(ans, 'outside', restaurants9)
 
 ans = input("Does your restaurant serve pizza (y/n/idk): ")
-restaurants11 = answer_question(ans, 'pizza', restaurants10) """
-
-#if len(restaurants) == 1:
-    #print("Your restaurant is " + restaurants[0]["name"])
-#else:
-    #print("Could not identify a restaurant based on the provided criteria.")
+restaurants11 = answer_question(ans, 'pizza', restaurants10)
