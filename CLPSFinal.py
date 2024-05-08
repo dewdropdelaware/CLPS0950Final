@@ -1,6 +1,4 @@
 print('This is CLPS0950 Final Project')
-print('Did this work?')
-print ('yes')
 
 def answer_question(ans, prop, database):
     if ans == "y":
@@ -56,62 +54,22 @@ database = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffee':
     {"name": "Zinnekens", 'Thayer': False, 'latenight': False, 'coffee': True, 'dessert': True, 'new': True, 'servers': True, 'price': False, 'snackpass': True, 'words': False, 'outside': True, 'pizza': False},
     {"name": "Feed the Cheeks",'Thayer': False, 'latenight': False, 'coffee': True, 'dessert': True, 'new': True, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': False, 'pizza': False}
     ]
-
-# something (for as long as open then if length = 1 or if command is executed then break)
-ans = input("Is your restaurant actually on Thayer (y/n/idk): ")
-database = answer_question(ans, 'Thayer', database)
-if len(database) == 1:
-    print("Your restaurant is " + database[0]["name"])
-
-ans = input("Is your restaurant open past midnight (y/n/idk): ")
-database = answer_question(ans, 'latenight', database)
-if len(database) == 1:
-    print("Your restaurant is " + database[0]["name"])
-
-ans = input("Does your restaurant serve coffee (y/n/idk): ")
-database = answer_question(ans, 'coffee', database)
-if len(database) == 1:
- print("Your restaurant is " + database[0]["name"])
-
-ans = input("Does your restaurant primarily serve dessert (y/n/idk): ")
-database = answer_question(ans, 'dessert', database)
-if len(database) == 1:
- print("Your restaurant is " + database[0]["name"]) 
-
-ans = input("Is your restaurant newer (y/n/idk): ")
-database = answer_question(ans, 'new', database)
-if len(database) == 1:
-    print("Your restaurant is " + database[0]["name"])
-
-ans = input("Does your restaurant have servers (y/n/idk): ")
-database = answer_question(ans, 'servers', database)
-if len(database) == 1:
-    print("Your restaurant is " + database[0]["name"])
-
-ans = input("Do you expect to spend over $15 when you come (y/n/idk): ")
-database = answer_question(ans, 'price', database)
-if len(database) == 1:
-    print("Your restaurant is " + database[0]["name"])
-ans = input("Is your restaurant on snackpass (y/n/idk): ")
-
-database = answer_question(ans, 'snackpass', database)
-if len(database) == 1:
-    print("Your restaurant is " + database[0]["name"])
-
-ans = input("Is your restaurant more than one word (y/n/idk): ")
-database = answer_question(ans, 'words', database)
-if len(database) == 1:
-    print("Your restaurant is " + database[0]["name"])
-
-ans = input("Can you find this restaurant outside of Providence (y/n/idk): ")
-database = answer_question(ans, 'outside', database)
-if len(database) == 1:
-    print("Your restaurant is " + database[0]["name"])
-    
-ans = input("Does your restaurant serve pizza (y/n/idk): ")
-database = answer_question(ans, 'pizza', database)
-
-if len(database) == 1:
-    print("Your restaurant is " + database[0]["name"])
-else:
-    print("Could not identify a restaurant based on the provided criteria.")
+questions = [
+    ("Is your restaurant actually on Thayer (y/n/idk)", 'Thayer'),
+    ("Is your restaurant open past midnight (y/n/idk)", 'latenight'),
+    ("Does your restaurant serve coffee (y/n/idk)", 'coffee'),
+    ("Does your restaurant primarily serve dessert (y/n/idk)", 'dessert'),
+    ("Is your restaurant newer (y/n/idk)", 'new'),
+    ("Does your restaurant have servers (y/n/idk)", 'servers'),
+    ("Do you expect to spend over $15 when you come (y/n/idk)", 'price'),
+    ("Is your restaurant on snackpass (y/n/idk)", 'snackpass'),
+    ("Is your restaurant more than one word (y/n/idk)", 'words'),
+    ("Can you find this restaurant outside of Providence (y/n/idk)", 'outside'),
+    ("Does your restaurant serve pizza (y/n/idk)", 'pizza')
+]
+for question, prop in questions:
+    ans = input(question + ": ")
+    database = answer_question(ans, prop, database)
+    if len(database) == 1:
+        print("Your restaurant is " + database[0]["name"])
+        break
