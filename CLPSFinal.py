@@ -1,14 +1,14 @@
 print('This is CLPS0950 Final Project')
 
 import tkinter as tk
-from tkinter import messagebox
-
+from tkinter import *
+window = Tk()
 def start_gui():
      global window, lbl, entry, btnSubmit
-     window = tk.Toplevel()
+     #window = tk.Toplevel()
      window.title("Welcome to the restautant reader!")
      window.geometry('900x150')
-     window.tk.call('tk', 'scaling', 3.0)
+     
 
      lbl = tk.Label(window, text = "Think of any restaurant on Thayer")
      lbl.grid(column=0, row=0)
