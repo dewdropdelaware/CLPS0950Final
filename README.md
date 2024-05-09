@@ -1,0 +1,1 @@
+For our CLPS0950 Final Presentation we tried replicating the game Akinator but with restaurants. We were able to make a preliminary code that sifts through a list of data and is able to identify a restaurant based on an input from the user.
