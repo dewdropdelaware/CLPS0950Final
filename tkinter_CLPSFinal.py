@@ -34,5 +34,3 @@ myButton = Button(open, text="Yeah!", command=myClick, fg = 'black', bg = 'yello
 myButton.pack()
 
 
-open.mainloop()
-

@@ -1,5 +1,25 @@
 print('This is CLPS0950 Final Project')
 
+import tkinter as tk
+from tkinter import messagebox
+
+def start_gui():
+     global window, lbl, entry, btnSubmit
+     window = tk.Toplevel()
+     window.title("Welcome to the restautant reader!")
+     window.geometry('900x150')
+     window.tk.call('tk', 'scaling', 3.0)
+
+     lbl = tk.Label(window, text = "Think of any restaurant on Thayer")
+     lbl.grid(column=0, row=0)
+
+     entry = tk.Entry(window, width=20)
+     entry.grid(column=1, row =0)
+
+     btnSubmit = tk.Button(window, text="Submit", command=submit_answer)
+     btnSubmit.grid(column=2, row=0)
+
+
 def answer_question(ans, prop, database):
     if ans == "y":
         ans = True
@@ -15,6 +35,25 @@ def answer_question(ans, prop, database):
             filtered_database.append(d)
 
     return filtered_database
+
+def submit_answer():
+    global database, lbl
+    user_answer = entry.get().lower()
+    entry.delete(0, tk.END)
+    
+    for question, prop in questions:
+        ans = input(question + ": ")
+        database = answer_question(ans, prop, database)
+        if len(database) == 1: 
+            lbl.config(text="Your restaurant is " + database[0]["name"])
+            break
+        else:
+            lbl.config(text="Sorry, we couldn't determine the restaurant.")
+            
+def btnCancel_clicked():
+            window.withdraw()
+
+     
 database = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},
     {"name": "In The Pink", 'Thayer': True, 'latenight': False, 'coffee': True, 'dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
     {"name": "Ben and Jerry's", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': True, 'pizza': False},
@@ -67,9 +106,8 @@ questions = [
     ("Can you find this restaurant outside of Providence (y/n/idk)", 'outside'),
     ("Does your restaurant serve pizza (y/n/idk)", 'pizza')
 ]
-for question, prop in questions:
-    ans = input(question + ": ")
-    database = answer_question(ans, prop, database)
-    if len(database) == 1:
-        print("Your restaurant is " + database[0]["name"])
-        break
+
+start_gui()
+window.mainloop()
+
+
