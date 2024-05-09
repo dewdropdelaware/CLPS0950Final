@@ -66,6 +66,12 @@ def answer_question(x, q, LA):
   for ii in range(0,len(q)):
     x = np.array(x)
     s = input("Is your restaurant " + q[ii] + "?")
+    
+    # if input is not 1 or 0, curtesy of chatGPT loop continues on to the next iteration
+    if s not in ['0', '1']:
+        print("Hmm? ...Making things tricky")
+        continue
+        
     #these are the inputs of each colums put into a row
     row = LA[:,ii]
 

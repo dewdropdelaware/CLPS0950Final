@@ -1,11 +1,6 @@
 from tkinter import *
 import numpy as np
 
-# from CLPSFinalLoop import x, q, LA
-# print(x)
-# print(q)
-# print(LA)
-
 restaurants = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},
     {"name": "In The Pink", 'Thayer': True, 'latenight': False, 'coffee': True, 'dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
     {"name": "Ben and Jerry's", 'Thayer': True, 'latenight': False, 'coffee': False, 'dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': True, 'pizza': False},
@@ -46,48 +41,94 @@ restaurants = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffe
     {"name": "Feed the Cheeks",'Thayer': False, 'latenight': False, 'coffee': True, 'dessert': True, 'new': True, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': False, 'pizza': False}
     ]
 
+a = len(restaurants[0])
+LA = np.zeros((len(restaurants), (a-1)))
+
+x = []
+q = []
+
+for i,d in enumerate(restaurants):
+    x.append(d["name"])
+    for j,k in enumerate(d.items()):
+        if k[0] == "name":
+            continue
+        else:
+            if k[0] not in q:
+                q.append(k[0])
+            LA[i,j-1] = k[1] 
 #creating a graphical user interface(GUI) for our game to exist in
 open = Tk()
 open.title("The Restaurantators")
-open.config(bg = "purple")
 
 myLabel = Label(open, text = 'This is our CLPS0950 Final Project')
 myLabel1 = Label(open, text = 'Are you ready to get started?')
-myLabel.grid(row = 0)
-myLabel1.grid(row = 1)
+myLabel.grid(row = 0, column = 0, padx = 5)
+myLabel1.grid(row = 0, column = 1)
 
-#defining a function to the click
 def myClick():
+    myButton2 = Button(open, text = 'Start',command=answer_questions, fg = 'black', bg = 'green')
+    myButton2.grid(row = 6, columnspan =2)
+    
     startLabel = Label(open, text = 'Hello and welcome to this new game called the Restaurantators!')
     startLabel1 = Label(open, text = 'Think of your favorite restaurant on campus.')
     startLabel2 = Label(open, text = 'When you got it, click the start button')
-    startLabel.grid(row = 3)
-    startLabel1.grid(row = 4)
-    startLabel2.grid(row = 5)
+    startLabel.grid(row = 3, columnspan = 2)
+    startLabel1.grid(row = 4, columnspan = 2)
+    startLabel2.grid(row = 5, columnspan = 2)
+
+def answer_question(x, q, LA):
+    answer_book =[]
+    for ii in range(0,len(q)):
+        x = np.array(x)
+        Label(open, text = 'Is your restaurant' + q[ii] + '?').grid(row = 8+ii, pady = 5)
+        Button(open, text = 'Yes').grid(row = 8+ii, column =1, padx = 5, pady = 5)
+        Button(open, text = 'No').grid(row = 8+ii, column =2, padx = 150, pady = 5)
+        Button(open, text = "Don't Know").grid(row = 8+ ii, column =3, pady = 5)
+    
+        def boolean():
+            qans = Button.cget('text')
+            if qans == 'Yes':
+                ans = '1'
+            elif qans == 'No':
+                ans = '0'
+            else:
+                ans = 'idk' 
+            Label(open, text = 'Cool').grid()
+            return ans 
+    
+        s = boolean
+        if s not in ['0', '1']:
+            continue
+        
+    #these are the inputs of each colums put into a row
+        row = LA[:,ii]
+
+        for jj in range(0, len(row)):
+            if jj> len(row)-1:
+                continue 
+            if float(s) != row[jj]:
+                #indexes of where the row equals the floats
+                answer_book= np.where(row!=float(s))
+                LA = np.delete(LA, answer_book, 0)
+                x = np.delete(x, answer_book)
+                row = LA[:,ii]
+
+            if len(LA) == 1:
+                Label(open, text = 'Your restaurant is:' + x[0]).grid()
+            return          
+        return print("Could not identify your restaurant")
+    
+def answer_questions():
+     answer_question(x,q,LA)
+
+#calling the function in the button, so don't put the ()
+myButton = Button(open, text="Yeah!", width = 40, command=myClick, fg = 'black', bg = 'yellow')
+myButton.grid(row = 2, columnspan = 2)
+
     #entry widgets are used intead of inputs on tkinter
     #e = Entry(open)
     #e.pack()
     #e.get() to retrieve entry
 
-    myButton2 = Button(open, text = 'Start',command=answer_questions, fg = 'black', bg = 'green')
-    myButton2.grid(row = 6)
-
-#calling the function in the button, so don't put the ()
-myButton = Button(open, text="Yeah!", command=myClick, fg = 'black', bg = 'yellow')
-myButton.grid(row = 2)
-
-def answer_questions():
-    
-    labell = Label(open, text = 'Is your restaurant actually on Thayer?')
-    labell.grid(row = 7 )
-    Thayer_Button1 = Button(open, text = 'Yes')
-    Thayer_Button2 = Button(open, text = 'No')
-    Thayer_Button3 = Button(open, text = "Don't Know")
-
-    Thayer_Button1.grid(row=8, column = 0)
-    Thayer_Button2.grid(row = 8, column = 0)
-    Thayer_Button3.grid(row = 8, column = 0)
-
-
-
+open.mainloop()
 
