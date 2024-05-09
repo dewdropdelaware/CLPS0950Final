@@ -84,7 +84,7 @@ def answer_question(x, q, LA):
         LA = np.delete(LA, answer_book, 0)
         x = np.delete(x, answer_book)
         row = LA[:,ii]
-        print(row)
+
 
         if len(LA) == 1:
           print("Your restaurant is:" + x[0])
