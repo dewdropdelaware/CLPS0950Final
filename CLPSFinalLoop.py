@@ -74,7 +74,6 @@ def answer_question(x, q, LA):
         
     #these are the inputs of each colums put into a row
     row = LA[:,ii]
-
     #this will not go through the indices of the row
     for jj in range(0, len(row)):
       if jj> len(row)-1:
@@ -85,6 +84,7 @@ def answer_question(x, q, LA):
         LA = np.delete(LA, answer_book, 0)
         x = np.delete(x, answer_book)
         row = LA[:,ii]
+        print(row)
 
         if len(LA) == 1:
           print("Your restaurant is:" + x[0])
