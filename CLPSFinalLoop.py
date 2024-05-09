@@ -58,8 +58,7 @@ for i,d in enumerate(restaurants):
         else:
             if k[0] not in q:
                 q.append(k[0])
-            LA[i,j-1] = k[1]
-print(LA)  
+            LA[i,j-1] = k[1] 
 
 #DEFINING OUR FUNCTION so we only have to run it once
 def answer_question(x, q, LA):
@@ -84,61 +83,7 @@ def answer_question(x, q, LA):
         if len(LA) == 1:
           print("Your restaurant is:" + x[0])
           return          
-                
-""" def answer_question(qans, prop, database):
-    if qans == "y":
-        boolean = True
-    elif qans == "n":
-        boolean = False
-    else:
-        return database
-
-
-    filtered_database = []
-    for d in database:
-        if d[prop] == boolean:
-            filtered_database.append(d)
-
-
-    if len(filtered_database) == 1:
-        print("Your restaurant is " + filtered_database[0]["name"])
-        exit()
-
-    return filtered_database
-
-
-ans = input("Is your restaurant actually on Thayer (y/n/idk): ")
-restaurants1 = answer_question(ans, 'Thayer', restaurants)
-
-ans = input("Is your restaurant open past midnight (y/n/idk): ")
-restaurants2 = answer_question(ans, 'latenight', restaurants1)
-
-ans = input("Does your restaurant serve coffee (y/n/idk): ")
-restaurants3 = answer_question(ans, 'coffee', restaurants2)
-
-ans = input("Does your restaurant primarily serve dessert (y/n/idk): ")
-restaurants4 = answer_question(ans, 'dessert', restaurants3)
-
-ans = input("Is your restaurant newer (y/n/idk): ")
-restaurants5 = answer_question(ans, 'new', restaurants4)
-
-ans = input("Does your restaurant have servers (y/n/idk): ")
-restaurants6 = answer_question(ans, 'servers', restaurants5)
-
-ans = input("Do you expect to spend over $15 when you come (y/n/idk): ")
-restaurants7 = answer_question(ans, 'price', restaurants6)
-
-ans = input("Is your restaurant on snackpass (y/n/idk): ")
-restaurants8 = answer_question(ans, 'snackpass', restaurants7)
-
-ans = input("Is your restaurant more than one word (y/n/idk): ")
-restaurants9 = answer_question(ans, 'words', restaurants8)
-
-ans = input("Can you find this restaurant outside of Providence (y/n/idk): ")
-restaurants10 = answer_question(ans, 'outside', restaurants9)
-
-ans = input("Does your restaurant serve pizza (y/n/idk): ")
-restaurants11 = answer_question(ans, 'pizza', restaurants10) """
+  return print("Could not identify your restaurant")
 
 #if len(restaurants) == 1:
     #print("Your restaurant is " + restaurants[0]["name"])
