@@ -220,7 +220,7 @@ myLabel1.grid(row = 1)
 
 my_orange= ImageTk.PhotoImage(Image.open("orange.jpg"))
 OrangeLabel = Label(open, image=my_orange, height = 300, width = 500)
-my_candy= ImageTk.PhotoImage(Image.open("candy.jpg"))
+my_candy= ImageTk.PhotoImage(Image.open("candy1.jpg"))
 CandyLabel = Label(open, image=my_candy, height = 300, width = 500)
 my_watermelon= ImageTk.PhotoImage(Image.open("watermelon.jpg"))
 WatermelonLabel = Label(open, image=my_watermelon, height =300, width = 500)
@@ -275,7 +275,7 @@ def button_pushed(s):
                     def button_clicked():
                         k = Blue_Entry.get() 
                         button_down(k,x, LA)
-                    Blue_label = Label(open, text = 'Is your item blue? (yes = 1 / no  = 0)')
+                    Blue_label = Label(open, text = 'Can your item be blue? (yes = 1 / no  = 0)')
                     Blue_label.grid(row = 8)
                     Blue_Entry = Entry(open, bg = 'skyblue')
                     Blue_Entry.grid(row = 8, column = 1, padx = 5)
@@ -308,7 +308,7 @@ def button_down(k,x, LA):
                         y = Green_Entry.get() 
                         button_tap(y,x, LA)
                     
-                    Green_Label = Label(open, text = 'Is your item green? (yes = 1 / no = 0)')
+                    Green_Label = Label(open, text = 'Can your item be green? (yes = 1 / no = 0)')
                     Green_Label.grid(row=9)
                     Green_Entry = Entry(open, bg ='pale green')
                     Green_Entry.grid(row =9 , column = 1, padx = 5)
@@ -349,7 +349,7 @@ def answer_questions():
     def button_clicked():
         s = Pink_Entry.get()
         button_pushed(s)
-    labell = Label(open, text = 'Is your item pink? (yes = 1 / no = 0)')
+    labell = Label(open, text = 'Can your item be pink? (yes = 1 / no = 0)')
     labell.grid(row = 7 )
     Pink_Entry = Entry(open, bg = 'pink')
     Pink_Entry.grid(row=7, column = 1, padx = 5)
