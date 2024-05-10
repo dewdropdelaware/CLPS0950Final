@@ -5,7 +5,6 @@ from tkinter import *
 window = Tk()
 def start_gui():
      global window, lbl, entry, btnSubmit
-     #window = tk.Toplevel()
      window.title("Welcome to the restautant reader!")
      window.geometry('900x150')
      
