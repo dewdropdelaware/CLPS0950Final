@@ -208,6 +208,7 @@
 #     main()
 import numpy as np
 from tkinter import *
+from PIL import ImageTk, Image
 
 open = Tk()
 open.title("Items mini")
@@ -217,11 +218,22 @@ myLabel1 = Label(open, text = 'Are you ready to get started?')
 myLabel.grid(row = 0)
 myLabel1.grid(row = 1)
 
+my_orange= ImageTk.PhotoImage(Image.open("orange.jpg"))
+OrangeLabel = Label(open, image=my_orange, height = 300, width = 500)
+my_candy= ImageTk.PhotoImage(Image.open("candy.jpg"))
+CandyLabel = Label(open, image=my_candy, height = 300, width = 500)
+my_watermelon= ImageTk.PhotoImage(Image.open("watermelon.jpg"))
+WatermelonLabel = Label(open, image=my_watermelon, height =300, width = 500)
+my_starbursts = ImageTk.PhotoImage(Image.open("starbursts.jpg"))
+StarLabel = Label(open, image=my_starbursts, height = 300, width = 500)
+
+
+
 #When "Yeah" Button is clicked
 def myClick():
     startLabel = Label(open, text = 'Hello and welcome to this new game called Items Mini!')
     startLabel1 = Label(open, text = 'Choose one of the following items:')
-    startLabel2 = Label (open, text = '[Orange, Starburst, Watermelon, Candy]')
+    startLabel2 = Label (open, text = '[Oranges, Starburst, Watermelon, Candy]')
     startLabel3 = Label(open, text = 'When you got it, click the start button')
     startLabel.grid(row = 3)
     startLabel1.grid(row = 4)
@@ -257,6 +269,7 @@ def button_pushed(s):
                 if len(LA) == 1:
                     Answer = Label(open, text = "Your item is:" + '' + x[0])
                     Answer.grid(row = 8)
+                    OrangeLabel.grid(row = 9, columnspan = 3)
                     return
                 else:
                     def button_clicked():
@@ -288,6 +301,7 @@ def button_down(k,x, LA):
                 if len(LA) ==1:
                     Answer = Label(open, text = 'Your item is:' + '' + x[0])
                     Answer.grid(row =9)
+                    CandyLabel.grid(row = 10, columnspan = 3)
                     return
                 else:
                     def button_clicked():
@@ -313,11 +327,18 @@ def button_tap(y, x, LA):
             if float(y) != row[ii]:
                 answer_book= np.where(row!=float(y))
                 LA = np.delete(LA, answer_book, 0)
-                x = np.delete(x, answer_book)          
-
-                Answer = Label(open, text = 'Your item is:' + '' + x[0])
-                Answer.grid(row =10)
-                return
+                x = np.delete(x, answer_book)  
+            
+                if y == '1':
+                    Answer = Label(open, text = 'Your item is:' + '' + x[0])
+                    Answer.grid(row =10)
+                    WatermelonLabel.grid(row = 11, columnspan = 3)
+                    return
+                else:
+                    Answer = Label(open, text = 'Your item is:' + '' + x[0])
+                    Answer.grid(row =10)
+                    StarLabel.grid(row = 11, columnspan = 3)
+                    return
                 
         else: print('oh no')
     
@@ -336,7 +357,7 @@ def answer_questions():
     Pink_Button.grid(row = 7, column = 2)
 
 restaurants = [{"Name": 'Starbursts',"Pink": True, "Blue":False, "Green":False}, {"Name": 'Candy', "Pink": True, "Blue":True, "Green":True},
-               {"Name": 'Orange' , "Pink": False, "Blue": False, "Green": False}, {"Name": 'Watermelon', "Pink": True, "Blue": False, "Green": True}]
+               {"Name": 'Oranges' , "Pink": False, "Blue": False, "Green": False}, {"Name": 'Watermelon', "Pink": True, "Blue": False, "Green": True}]
 q = []
 names = []
 answer_book =[]
@@ -351,4 +372,7 @@ for i,d in enumerate(restaurants):
             if k[0] not in q:
                 q.append(k[0])
             array[i,j-1] = k[1]
+            
+Button_Exit = Button(open, text = 'Exit Program', command = open.quit)
+Button_Exit.grid(row =20)
 open.mainloop()

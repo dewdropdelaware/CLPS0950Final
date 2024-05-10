@@ -1,44 +1,44 @@
 print('This is CLPS0950 Final Project')
 
 
-restaurants = [{'name': "Poke Works", 'Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},
-    {"name": "In The Pink", 'Thayer': True, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': True, 'servers': False, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
-    {"name": "Ben and Jerry's", 'Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': True, 'pizza': False},
-    {"name": "Mala Noodles", 'Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': True, 'servers': True, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
-    {"name": "La Creperie", 'Thayer': False, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
-    {"name": "Starbucks", 'Thayer': True, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': False, 'outside': True, 'pizza': False},
-    {"name": "Ten One Tea House", 'Thayer': True, 'latenight': False, 'coffee serving': True, 'primarily dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},
-    {"name": "Al Shami", 'Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': False, 'pizza': False},
-    {"name": "Kabob and Curry", 'Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
-    {"name": "Bajas Taqueria", 'Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
-    {"name": "Bajas Tex Mex Grill", 'Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},
-    {"name": "East Side Pockets", 'Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
-    {"name": "Shake Shack", 'Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': True, 'pizza': False},
-    {"name": "Chipotle", 'Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': False, 'outside': True, 'pizza': False},
-    {"name": "Calientes", 'Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': True, 'words': False, 'outside': True, 'pizza': False},
-    {"name": "Chinatown", 'Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': True, 'words': False, 'outside': False, 'pizza': False},
-    {"name": "Yas Chicken", 'Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': True, 'servers': False, 'price': False, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},
-    {"name": "Antonio's Pizza",'Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},
-    {"name": "Shaking Crab", 'Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': True, 'servers': True, 'price': True, 'snackpass': False, 'words': True, 'outside': False, 'pizza': False},
-    {"name": "Mikes Calzones and Deli", 'Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': True, 'words': True, 'outside': False, 'pizza': True},
-    {"name": "Sydney", 'Thayer': True, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': True, 'servers': False, 'price': False, 'snackpass': False, 'words': False, 'outside': False, 'pizza': False},
-    {"name": "Aroma Joes", 'Thayer': True, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},
-    {"name": "Andreas", 'Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'snackpass': False, 'words': False, 'outside': False, 'pizza': False},
-    {"name": "Kung Fu Tea", 'Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': True, 'pizza': False},
-    {"name": "Vivi's", 'Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': False, 'outside': True, 'pizza': False},
-    {"name": "Insomnia", 'Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': True, 'pizza': False},
-    {"name": "Tiger Sugar", 'Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': True, 'new': False, 'servers': False, 'price': False, 'snackpass': True, 'words': True, 'outside': True, 'pizza': False},
-    {"name": "Flatbread", 'Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'snackpass': False, 'words': False, 'outside': True, 'pizza': True},
-    {"name": "Heng Thai", 'Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
-    {"name": "Den Den", 'Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'snackpass': False, 'words': True, 'outside': False, 'pizza': False},
-    {"name": "Peri Peri", 'Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'snackpass': True, 'words': True, 'outside': True,'pizza': False},
-    {"name": "Ceremony", 'Thayer': False, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': False, 'words': False, 'outside': False, 'pizza': False},
-    {"name": "Dadadurki", 'Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': True, 'words': False, 'outside': False, 'pizza': False},
-    {"name": "Bagel Gourmet Ole", 'Thayer': True, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
-    {"name": "Meeting Street Cafe",  'Thayer': False, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
-    {"name": "Wongs Kitchen", 'Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'snackpass': True, 'words': True, 'outside': False, 'pizza': False},
-    {"name": "Zinnekens", 'Thayer': False, 'latenight': False, 'coffee serving': True, 'primarily dessert': True, 'new': True, 'servers': True, 'price': False, 'snackpass': True, 'words': False, 'outside': True, 'pizza': False},
-    {"name": "Feed the Cheeks",'Thayer': False, 'latenight': False, 'coffee serving': True, 'primarily dessert': True, 'new': True, 'servers': False, 'price': False, 'snackpass': False, 'words': True, 'outside': False, 'pizza': False}
+restaurants = [{'name': "Poke Works", 'on Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': True, 'servers': False, 'price': True, 'on snackpass': True, 'multiple words': True, 'outside': True, 'pizza': False},
+    {"name": "In The Pink", 'on Thayer': True, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': True, 'servers': False, 'price': True, 'on snackpass': True, 'multiple words': True, 'outside': False, 'pizza': False},
+    {"name": "Ben and Jerry's", 'on Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': True, 'new': False, 'servers': False, 'price': False, 'on snackpass': False, 'multiple words': True, 'outside': True, 'pizza': False},
+    {"name": "Mala Noodles", 'on Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': True, 'servers': True, 'price': True, 'on snackpass': True, 'multiple words': True, 'outside': False, 'pizza': False},
+    {"name": "La Creperie", 'on Thayer': False, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'on snackpass': True, 'multiple words': True, 'outside': False, 'pizza': False},
+    {"name": "Starbucks", 'on Thayer': True, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': False, 'multiple words': False, 'outside': True, 'pizza': False},
+    {"name": "Ten One Tea House", 'on Thayer': True, 'latenight': False, 'coffee serving': True, 'primarily dessert': True, 'new': False, 'servers': False, 'price': False, 'on snackpass': True, 'multiple words': True, 'outside': True, 'pizza': False},
+    {"name": "Al Shami", 'on Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': False, 'multiple words': True, 'outside': False, 'pizza': False},
+    {"name": "Kabob and Curry", 'on Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'on snackpass': True, 'multiple words': True, 'outside': False, 'pizza': False},
+    {"name": "Bajas Taqueria", 'on Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'on snackpass': True, 'multiple words': True, 'outside': False, 'pizza': False},
+    {"name": "Bajas Tex Mex Grill", 'on Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': True, 'multiple words': True, 'outside': True, 'pizza': False},
+    {"name": "East Side Pockets", 'on Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': True, 'multiple words': True, 'outside': False, 'pizza': False},
+    {"name": "Shake Shack", 'on Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': False, 'multiple words': True, 'outside': True, 'pizza': False},
+    {"name": "Chipotle", 'on Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': False, 'multiple words': False, 'outside': True, 'pizza': False},
+    {"name": "Calientes", 'on Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': True, 'multiple words': False, 'outside': True, 'pizza': False},
+    {"name": "Chinatown", 'on Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': True, 'multiple words': False, 'outside': False, 'pizza': False},
+    {"name": "Yas Chicken", 'on Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': True, 'servers': False, 'price': False, 'on snackpass': True, 'multiple words': True, 'outside': True, 'pizza': False},
+    {"name": "Antonio's Pizza",'on Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': True, 'multiple words': True, 'outside': True, 'pizza': False},
+    {"name": "Shaking Crab", 'on Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': True, 'servers': True, 'price': True, 'on snackpass': False, 'multiple words': True, 'outside': False, 'pizza': False},
+    {"name": "Mikes Calzones and Deli", 'on Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': True, 'multiple words': True, 'outside': False, 'pizza': True},
+    {"name": "Sydney", 'on Thayer': True, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': True, 'servers': False, 'price': False, 'on snackpass': False, 'multiple words': False, 'outside': False, 'pizza': False},
+    {"name": "Aroma Joes", 'on Thayer': True, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': True, 'multiple words': True, 'outside': True, 'pizza': False},
+    {"name": "Andreas", 'on Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'on snackpass': False, 'multiple words': False, 'outside': False, 'pizza': False},
+    {"name": "Kung Fu Tea", 'on Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': True, 'new': False, 'servers': False, 'price': False, 'on snackpass': False, 'multiple words': True, 'outside': True, 'pizza': False},
+    {"name": "Vivi's", 'on Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': True, 'new': False, 'servers': False, 'price': False, 'on snackpass': False, 'multiple words': False, 'outside': True, 'pizza': False},
+    {"name": "Insomnia", 'on Thayer': True, 'latenight': True, 'coffee serving': False, 'primarily dessert': True, 'new': False, 'servers': False, 'price': False, 'on snackpass': False, 'multiple words': True, 'outside': True, 'pizza': False},
+    {"name": "Tiger Sugar", 'on Thayer': True, 'latenight': False, 'coffee serving': False, 'primarily dessert': True, 'new': False, 'servers': False, 'price': False, 'on snackpass': True, 'multiple words': True, 'outside': True, 'pizza': False},
+    {"name": "Flatbread", 'on Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'on snackpass': False, 'multiple words': False, 'outside': True, 'pizza': True},
+    {"name": "Heng Thai", 'on Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'on snackpass': True, 'multiple words': True, 'outside': False, 'pizza': False},
+    {"name": "Den Den", 'on Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'on snackpass': False, 'multiple words': True, 'outside': False, 'pizza': False},
+    {"name": "Peri Peri", 'on Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'on snackpass': True, 'multiple words': True, 'outside': True,'pizza': False},
+    {"name": "Ceremony", 'on Thayer': False, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': False, 'multiple words': False, 'outside': False, 'pizza': False},
+    {"name": "Dadadurki", 'on Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': True, 'multiple words': False, 'outside': False, 'pizza': False},
+    {"name": "Bagel Gourmet Ole", 'on Thayer': True, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': True, 'multiple words': True, 'outside': False, 'pizza': False},
+    {"name": "Meeting Street Cafe",  'on Thayer': False, 'latenight': False, 'coffee serving': True, 'primarily dessert': False, 'new': False, 'servers': True, 'price': True, 'on snackpass': True, 'multiple words': True, 'outside': False, 'pizza': False},
+    {"name": "Wongs Kitchen", 'on Thayer': False, 'latenight': False, 'coffee serving': False, 'primarily dessert': False, 'new': False, 'servers': False, 'price': False, 'on snackpass': True, 'multiple words': True, 'outside': False, 'pizza': False},
+    {"name": "Zinnekens", 'on Thayer': False, 'latenight': False, 'coffee serving': True, 'primarily dessert': True, 'new': True, 'servers': True, 'price': False, 'on snackpass': True, 'multiple words': False, 'outside': True, 'pizza': False},
+    {"name": "Feed the Cheeks",'on Thayer': False, 'latenight': False, 'coffee serving': True, 'primarily dessert': True, 'new': True, 'servers': False, 'price': False, 'on snackpass': False, 'multiple words': True, 'outside': False, 'pizza': False}
     ]
 
 
@@ -49,6 +49,7 @@ LA = np.zeros((len(restaurants), (a-1)))
 
 x = []
 q = []
+
 
 for i,d in enumerate(restaurants):
     x.append(d["name"])
@@ -65,7 +66,7 @@ def answer_question(x, q, LA):
   answer_book =[]
   for ii in range(0,len(q)):
     x = np.array(x)
-    s = input("Is your restaurant " + q[ii] + "?")
+    s = input("Is your restaurant " + q[ii] + "?" + "(yes = 1 / no = 0)")
     
     # if input is not 1 or 0, curtesy of chatGPT loop continues on to the next iteration
     if s not in ['0', '1']:
